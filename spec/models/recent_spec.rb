@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
-describe Component do
+describe Recent do
   before(:each) do
     @attr = {:title => "componentTitle", :content => "The content"}
   end  

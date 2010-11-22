@@ -1,0 +1,11 @@
+$('#dialog').append('<div class="fail">A title and content body are required</div>');
+$('#dialog').dialog({  
+          autoOpen: false,
+			    modal: true,
+			    width: 500,
+          height: 100
+        });
+$('#dialog').dialog('open');
+setTimeout("$('#dialog').dialog('close')", 1500);
+setTimeout("$('#dialog .fail').remove()", 1500);
+
