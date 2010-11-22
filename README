@@ -17,7 +17,6 @@ There is no save. Once you are finished editing your page, go back to the page l
 
 BUGS:
 - A JQuery UI mis-function causes the component to fly to the bottom of the page when resized. But if you find it and pull it back it will work just fine.
-- I have a before_filter that I need to fix. It adds 1 to vote when vote is edited. 
 - I was trying STI for the first time, and while it is an amazing implementation of inheritance. It calls the generic component template the first time a component is rendered rather than the specific poll or recent blog template.
 - Code is not as DRY as I would like it to be.
 
