@@ -1,7 +1,7 @@
 <%= form_for(@component || @component = @cmspage.components.build, :remote => true) do |f| %>
   <%= f.error_messages %>
   <%= f.label :type %><br />
-  <%= f.select(:type, ["Poll"], :include_blank=>true) %>
+  <%= f.select(:type, ["Poll", "Recent"], :include_blank=>true) %>
   <%= f.hidden_field :cmspage_id %>
   <p>
     <%= f.label :title %><br />
@@ -17,9 +17,18 @@
 $('#component_type').change(function(e) {
  if ($("#component_type option:selected").text() == "Poll"){
   $("label[for=component_content]").text("Question for Poll");
+  $("textarea[id=component_content]").removeAttr('readonly');
+  $("textarea[id=component_content]").val("");
+  }
+ else if ($("#component_type option:selected").text() == "Recent"){
+  $("label[for=component_content]").text("Will display the 5 most recent posts");
+  $("textarea[id=component_content]").attr("readonly","true");
+  $("textarea[id=component_content]").val("These are the 5 most recent posts");
   }
  else{
   $("label[for=component_content]").text("Content");
+  $("textarea[id=component_content]").removeAttr('readonly');
+  $("textarea[id=component_content]").val("");
   }
 });
 </script>

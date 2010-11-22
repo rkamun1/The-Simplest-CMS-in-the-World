@@ -34,6 +34,7 @@ class CmspagesController < ApplicationController
   def edit
     @cmspage = Cmspage.find(params[:id])
     @components = @cmspage.components
+    @posts = Post.all(:limit => 5, :order => 'created_at DESC')
     respond_to do |format|  
        format.html
        format.js

@@ -1,12 +1,11 @@
-class PollsController < ApplicationController 
-  before_filter :tally_vote, :only => :update
+class RecentsController < ApplicationController 
   def edit
     @component = Component.find(params[:id])
   end
   
   def update
     @component = Component.find(params[:id])
-    if @component.update_attributes(params[:poll])
+    if @component.update_attributes(params[:recent])
       flash[:notice] = "Successfully updated poll."
       respond_to do |format|  
        format.html { redirect_to @component }  
@@ -22,18 +21,5 @@ class PollsController < ApplicationController
     @component.destroy
     flash[:notice] = "Successfully destroyed poll."
     redirect_to polls_url
-  end
-
-private
-  def tally_vote
-    component = Component.find(params[:id])
-    if(params[:poll][:yes]=="true")
-      params[:poll][:yes] = (component.yes||0) + 1 
-    else
-      params[:poll][:yes] = (component.yes||0)
-      params[:poll][:no] = (component.no||0) + 1 
-    end
-    params[:poll][:total_votes] = (component.yes||0) + (component.no||0) + 1
-
   end
 end

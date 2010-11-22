@@ -1,3 +1,3 @@
 class Poll < Component
-  attr_accessible :title, :question, :yes, :no, :total_votes, :ipaddress
+  attr_accessible :title, :content, :yes, :no, :total_votes, :ipaddress
 end

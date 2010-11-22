@@ -12,7 +12,7 @@ class ComponentsController < ApplicationController
   end
   
   def create
-    params[:component].merge!(:width => 500,:height=>200 ,:left=>0,:top=>0) #initial positioning
+    params[:component].merge!(:width => 500,:height=>200 ,:left=>0,:top=>0) #initial positioning 
     @component = Component.new(params[:component])
     if @component.save
       @components = @component.cmspage.components.all

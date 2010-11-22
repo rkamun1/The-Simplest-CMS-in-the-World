@@ -1,6 +1,14 @@
 <div class = "item">
   <div class = "header"><%= poll.title %></div>
   <div class = "content"><%= poll.content %></div>
+  <div class = "yes">YES:<%= poll.yes %></div>
+  <div class = "no">NO:<%= poll.no %></div>
+  <div class = "total vote">TOTAL VOTES:<%= poll.total_votes %></div>
+  <%= form_for(poll, :remote => true) do |f| %>
+    <%= f.radio_button :yes, 'true' %> yes
+    <%= f.radio_button :yes, 'false' %> no
+    <p><%= f.submit %></p>
+  <% end %>
   <div class="edit">
       <%= link_to "Edit", edit_poll_path(poll), :remote => true %>
       <%= link_to "Destroy", poll, :confirm => 'Are you sure?', :method => :delete, :remote => true %>

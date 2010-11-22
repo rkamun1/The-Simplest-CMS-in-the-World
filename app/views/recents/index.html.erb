@@ -1,0 +1,41 @@
+<% title "Recents" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Cmspage</th>
+    <th>Position</th>
+    <th>Width</th>
+    <th>Height</th>
+    <th>Top</th>
+    <th>Left</th>
+    <th>Type</th>
+    <th>Yes</th>
+    <th>No</th>
+    <th>Total Votes</th>
+    <th>Ip Address</th>
+  </tr>
+  <% for recent in @recents %>
+    <tr>
+      <td><%= recent.title %></td>
+      <td><%= recent.content %></td>
+      <td><%= recent.cmspage_id %></td>
+      <td><%= recent.position %></td>
+      <td><%= recent.width %></td>
+      <td><%= recent.height %></td>
+      <td><%= recent.top %></td>
+      <td><%= recent.left %></td>
+      <td><%= recent.type %></td>
+      <td><%= recent.yes %></td>
+      <td><%= recent.no %></td>
+      <td><%= recent.total_votes %></td>
+      <td><%= recent.ip_address %></td>
+      <td><%= link_to "Show", recent %></td>
+      <td><%= link_to "Edit", edit_recent_path(recent) %></td>
+      <td><%= link_to "Destroy", recent, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Recent", new_recent_path %></p>

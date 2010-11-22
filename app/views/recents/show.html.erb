@@ -1,0 +1,9 @@
+<% title "Recent" %>
+
+<%= render @posts %>
+
+<p>
+  <%= link_to "Edit", edit_recent_path(@recent) %> |
+  <%= link_to "Destroy", @recent, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", recents_path %>
+</p>
