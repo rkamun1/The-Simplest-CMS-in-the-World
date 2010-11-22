@@ -10,7 +10,7 @@
   <body>
     <div id="container">
       <h1>
-        <%= @cmspage.title %>
+       <%= @cmspage.nil? ? "BLOG":@cmspage.title %> 
       </h1>
       <div id="menubar">
         <% @cmspages.each do |cmspage| %>

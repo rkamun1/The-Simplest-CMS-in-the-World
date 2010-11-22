@@ -1,6 +1,9 @@
 <div class = "item">
 
   <%= render @posts %> 
+<div class="edit">
+      <%= link_to "Destroy", recent, :confirm => 'Are you sure?', :method => :delete, :remote => true %>
+  </div>
   </div>
 </div>
 

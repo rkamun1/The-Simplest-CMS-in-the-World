@@ -30,7 +30,9 @@ class PollsController < ApplicationController
     @component = Component.find(params[:id])
     @component.destroy
     flash[:notice] = "Successfully destroyed poll."
-    redirect_to polls_url
+    respond_to do |format|  
+         format.js 
+    end  
   end
 
 private

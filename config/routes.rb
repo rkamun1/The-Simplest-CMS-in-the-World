@@ -6,13 +6,12 @@ Samplecms::Application.routes.draw do
 
   match '/admin' => 'cmspages#index'
   scope "/admin" do
-    resources :cmspages
+    resources :cmspages, :except => [:show, :destroy]
     resources :components, :except => [:show]
     #resources :posts, :except => [:index]
-    resources :polls, :except => [:show, :update]
   end
-  resources :cmspages , :only => [:show]
-  resources :polls , :only => [:show, :update]
+  resources :cmspages , :only => [:show, :destroy]
+  resources :polls
   match '/blog' => 'posts#index'
   root :to => "cmspages#show"
   

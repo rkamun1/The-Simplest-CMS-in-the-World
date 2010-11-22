@@ -9,3 +9,10 @@
       <% end %>
     </div>
   </div>
+
+<script>
+  var pathname = window.location.pathname;
+  if (pathname.indexOf("admin") < 0){
+    $('.edit').hide();
+  }
+</script>

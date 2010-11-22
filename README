@@ -1,17 +1,23 @@
 == Welcome to The Simplest CMS EVER!!
 There are three basic sections to this site
-1) root => /: This is the page the application defaults to. It shows a menu with created pages and the first page of the list. If a page has not been create, the first user will be redirected to the admin side to create a page
-2) blog => /blog. This is the blog side of the site. Admin is allowed to created a blog, leave a comment etc etc, typical blog operations.
+1) root => /: This is the page the application defaults to. It shows a menu with created pages and the first page of the list(database). If no page has been created yet, the first user will be redirected to the admin side to create a page
+2) blog => /blog. This is the blog side of the site. Admin is allowed to created a blog and leave a comment
 3) admin => /admin: This is the admin section if the site. admin is allowed to create a page, add components to a page, edit components, delete components,or re-order the components on the page.
 
 Component: Using single table inheritance, I have implemented three basic types of components. 
     i)The basic component, this is basically a title and content
     ii)The poll. Accepts a title and a poll question. 
     iii)The blog roll. this just accepts a title.
-The basic component can be oved around the page(drag and drop) or resized.
+The basic component can be moved around the page(drag and drop) or resized.
+Menu on the user side, grows dynamically as pages are added.
+A Blog is included.
+Components may be dragged across the page and resized.
 
+There is no save. Once you are finished editing your page, go back to the page list. everything shall be saved. Not very intuitive, I know.
 
 BUGS:
 - A JQuery UI mis-function causes the component to fly to the bottom of the page when resized. But if you find it and pull it back it will work just fine.
 - I have a before_filter that I need to fix. It adds 1 to vote when vote is edited. 
+- I was trying STI for the first time, and while it is an amazing implementation of inheritance. It calls the generic component template the first time a component is rendered rather than the specific poll or recent blog template.
+- Code is not as DRY as I would like it to be.
 

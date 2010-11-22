@@ -10,7 +10,6 @@
     <p><%= f.submit %></p>
   <% end %>
   <div class="edit">
-      <%= link_to "Edit", edit_poll_path(poll), :remote => true %>
       <%= link_to "Destroy", poll, :confirm => 'Are you sure?', :method => :delete, :remote => true %>
   </div>
 </div>
