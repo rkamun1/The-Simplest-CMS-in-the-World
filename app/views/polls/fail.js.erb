@@ -1,0 +1,11 @@
+$('#dialog').append('<div class="fail">Sorry you have already voted in that poll</div>');
+$('#dialog').dialog({  
+          autoOpen: false,
+			    modal: true,
+			    width: 500,
+          height: 100
+        });
+$('#dialog').dialog('open');
+setTimeout("$('#dialog').dialog('close')", 1500);
+setTimeout("$('#dialog .fail').remove()", 1500);
+

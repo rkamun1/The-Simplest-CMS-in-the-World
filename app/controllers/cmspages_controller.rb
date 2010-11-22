@@ -6,10 +6,10 @@ class CmspagesController < ApplicationController
   def show
     @cmspages = Cmspage.all
     redirect_to '/admin' and return if @cmspages.empty?
-    if !@cmspages.empty?
-      @cmspage = Cmspage.find(params[:id]||@cmspages.first.id)
-      @components = @cmspage.components.all 
-    end
+    @posts = Post.all(:limit => 5, :order => 'created_at DESC')
+    @cmspage = Cmspage.find(params[:id]||@cmspages.first.id)
+    @components = @cmspage.components.all 
+
     render :layout => "external"
   end
   

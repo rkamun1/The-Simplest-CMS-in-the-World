@@ -6,14 +6,23 @@ class PollsController < ApplicationController
   
   def update
     @component = Component.find(params[:id])
-    if @component.update_attributes(params[:poll])
-      flash[:notice] = "Successfully updated poll."
-      respond_to do |format|  
-       format.html { redirect_to @component }  
-       format.js
-      end        
+    id = params[:id]
+    if !session[id]      
+      if @component.update_attributes(params[:poll])
+        session[id] = true
+        flash[:notice] = "Successfully updated poll."
+        respond_to do |format|  
+         format.html { redirect_to @component }  
+         format.js
+        end        
+      else
+        render :action => 'edit'
+      end
     else
-      render :action => 'edit'
+      puts "you cant do that dude"
+      respond_to do |format|  
+         format.js {render :fail}
+        end        
     end
   end
   
