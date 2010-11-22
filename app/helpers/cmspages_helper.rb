@@ -1,0 +1,2 @@
+module CmspagesHelper
+end

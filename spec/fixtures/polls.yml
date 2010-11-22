@@ -1,0 +1,15 @@
+one:
+  title: MyString
+  question: MyString
+  yes: 1
+  no: 1
+  total_votes: 1
+  ipaddress: MyString
+
+two:
+  title: MyString
+  question: MyString
+  yes: 1
+  no: 1
+  total_votes: 1
+  ipaddress: MyString

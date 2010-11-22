@@ -1,0 +1,25 @@
+<%= form_for(@component || @component = @cmspage.components.build, :remote => true) do |f| %>
+  <%= f.error_messages %>
+  <%= f.label :type %><br />
+  <%= f.select(:type, ["Poll"], :include_blank=>true) %>
+  <%= f.hidden_field :cmspage_id %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
+<script>
+$('#component_type').change(function(e) {
+ if ($("#component_type option:selected").text() == "Poll"){
+  $("label[for=component_content]").text("Question for Poll");
+  }
+ else{
+  $("label[for=component_content]").text("Content");
+  }
+});
+</script>

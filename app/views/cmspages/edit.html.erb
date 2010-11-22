@@ -1,0 +1,50 @@
+<h2>Edit Page:</h2>
+  <div id="page">
+    <div id="header">
+      <h2>
+        <%= @cmspage.title %>
+          <span id="editbtn">
+            <%= link_to "Edit", edit_cmspage_path(@cmspage), :remote=>true %>
+          </span>
+      </h2><p><%= link_to "Back to Page List", cmspages_path %></p>
+    </div> 
+   
+    <div id="components">
+      <% @components.each do |component| %>
+        <div id = "<%= component.id %>" class ="component" style="top:<%= component.top %>px;left:<%= component.left %>px;width:<%= component.width %>px;height:<%= component.height %>px;">
+          <%= render component %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <h2>Add a component</h2>
+    <%= render "/components/form" %>
+
+<p>
+  <%= link_to "Show", @cmspage %> |
+  <%= link_to "View All", cmspages_path %>
+</p>
+
+<script>
+$(".component").resizable({ 
+    stop: function(event, ui) { var width = $('#'+$(this).attr('id')).css('width');
+                                var height = $('#'+$(this).attr('id')).css('height');  
+                                $.ajax({url:'/admin/components/'+ $(this).attr('id')+'.json',
+                                       type: "PUT",
+                                       data: {component:{width : width, height : height}}
+                                       }); 
+  }  
+});
+
+$(".component").draggable({ 
+    stop: function(event, ui) {var left = $('#'+$(this).attr('id')).css('left');
+                               var top = $('#'+$(this).attr('id')).css('top');
+                               $.ajax({url:'/admin/components/'+ $(this).attr('id')+'.json',
+                                     type: "PUT",
+                                     data: {component:{top : top, left : left}}
+                                     });
+     
+  }
+});
+
+</script>

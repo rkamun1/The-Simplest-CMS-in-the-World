@@ -1,0 +1,32 @@
+<% title "Poll" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @poll.title %>
+</p>
+<p>
+  <strong>Question:</strong>
+  <%= @poll.question %>
+</p>
+<p>
+  <strong>Yes:</strong>
+  <%= @poll.yes %>
+</p>
+<p>
+  <strong>No:</strong>
+  <%= @poll.no %>
+</p>
+<p>
+  <strong>Total Votes:</strong>
+  <%= @poll.total_votes %>
+</p>
+<p>
+  <strong>Ipaddress:</strong>
+  <%= @poll.ipaddress %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_poll_path(@poll) %> |
+  <%= link_to "Destroy", @poll, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", polls_path %>
+</p>

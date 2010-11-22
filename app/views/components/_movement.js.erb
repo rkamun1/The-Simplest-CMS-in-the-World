@@ -1,0 +1,21 @@
+$(".component").resizable({ 
+    stop: function(event, ui) { var width = $('#'+$(this).attr('id')).css('width');
+                                var height = $('#'+$(this).attr('id')).css('height');  
+                                $.ajax({url:'/admin/components/'+ $(this).attr('id')+'.json',
+                                       type: "PUT",
+                                       data: {component:{width : width, height : height}}
+                                       }); 
+  }  
+});
+
+$(".component").draggable({ 
+    stop: function(event, ui) {var left = $('#'+$(this).attr('id')).css('left');
+                               var top = $('#'+$(this).attr('id')).css('top');
+                               $.ajax({url:'/admin/components/'+ $(this).attr('id')+'.json',
+                                     type: "PUT",
+                                     data: {component:{top : top, left : left}}
+                                     });
+     
+  }
+});
+

@@ -1,0 +1,15 @@
+<% title "Component" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @component.title %>
+</p>
+<p>
+  <strong>Content:</strong>
+  <%= @component.content %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_component_path(@component), :remote => true %> |
+  <%= link_to "Destroy", @component, :confirm => 'Are you sure?', :method => :delete, :remote => true %> |
+</p>

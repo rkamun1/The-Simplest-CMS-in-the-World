@@ -1,0 +1,4 @@
+alert('Hello from AJAX');  
+$("#container").html('<h2>Edit Page:</h2><div id="page"><div id="header"><h2><%= @cmspage.title %><span id="editbtn"><%= link_to "Edit", edit_cmspage_path(@cmspage), :remote=>true %></span></h2><p><%= link_to "Back to Page Menu", cmspages_path %></p></div> <div id="flash_notice"><%= escape_javascript(flash.delete(:notice)) %></div><div id="components"></div></div><h2>Add a component</h2><%= escape_javascript(render "/components/form") %>');
+setTimeout($('#flash_notice').fadeOut('slow'), 150000000);
+

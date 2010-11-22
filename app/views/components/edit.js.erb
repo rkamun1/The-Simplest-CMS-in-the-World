@@ -1,0 +1,10 @@
+$('#<%= @component.id%> .item').remove();
+$('#dialog').append('<div class="editform"><%= escape_javascript(render 'form') %></div>');
+$('#dialog').dialog({  
+          autoOpen: false,
+			    modal: true,
+			    width: 500,
+          height: 300
+        });
+$('#dialog').dialog('open');
+

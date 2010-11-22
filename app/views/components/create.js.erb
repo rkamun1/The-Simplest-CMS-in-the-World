@@ -1,0 +1,16 @@
+$('#components').append('<div id = "<%= @component.id %>" class ="component" style="top:<%= @component.top %>px;left:<%= @component.left %>px;width:<%= @component.width %>px;height:<%= @component.height %>px;"><%= escape_javascript(render @component) %></div>');
+$('#new_component')[0].reset();
+<%= render :partial => "movement" %>
+$('#dialog').append('<div id="flash_notice"><%= escape_javascript(flash.delete(:notice)) %></div>');
+$('#dialog').dialog({  
+          autoOpen: false,
+			    modal: true,
+			    width: 500,
+          height: 105
+        });
+$('#dialog').dialog('open');
+setTimeout("$('#dialog').dialog('close')", 1500);
+setTimeout("$('#flash_notice').remove()", 1500);
+
+
+

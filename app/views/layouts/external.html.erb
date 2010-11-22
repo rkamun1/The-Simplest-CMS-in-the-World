@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= stylesheet_link_tag %w[application jquery-ui] %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <% @cmspages.each do |cmspage| %>
+          <%= link_to cmspage.title, cmspage %>
+        <%end%>
+        <%= link_to "blog", blog_path %>
+      </div>
+      <%= yield %>
+    </div>
+  </body>
+</html>

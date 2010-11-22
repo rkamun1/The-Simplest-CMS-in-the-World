@@ -1,0 +1,8 @@
+<div class = "item">
+    <div class = "header"><%= component.title %></div>
+    <div class = "content"><%= component.content %></div>
+    <div class="edit">
+        <%= link_to "Edit", edit_component_path(component), :remote => true %>
+        <%= link_to "Destroy", component, :confirm => 'Are you sure?', :method => :delete, :remote => true %>
+    </div>
+  </div>

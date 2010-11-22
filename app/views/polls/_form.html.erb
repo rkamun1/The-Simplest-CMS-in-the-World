@@ -1,0 +1,28 @@
+<%= form_for @poll do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :question %><br />
+    <%= f.text_field :question %>
+  </p>
+  <p>
+    <%= f.label :yes %><br />
+    <%= f.text_field :yes %>
+  </p>
+  <p>
+    <%= f.label :no %><br />
+    <%= f.text_field :no %>
+  </p>
+  <p>
+    <%= f.label :total_votes %><br />
+    <%= f.text_field :total_votes %>
+  </p>
+  <p>
+    <%= f.label :ipaddress %><br />
+    <%= f.text_field :ipaddress %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

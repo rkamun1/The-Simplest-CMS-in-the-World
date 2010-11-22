@@ -1,0 +1,27 @@
+<% title "Polls" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Question</th>
+    <th>Yes</th>
+    <th>No</th>
+    <th>Total Votes</th>
+    <th>Ipaddress</th>
+  </tr>
+  <% for poll in @polls %>
+    <tr>
+      <td><%= poll.title %></td>
+      <td><%= poll.question %></td>
+      <td><%= poll.yes %></td>
+      <td><%= poll.no %></td>
+      <td><%= poll.total_votes %></td>
+      <td><%= poll.ipaddress %></td>
+      <td><%= link_to "Show", poll %></td>
+      <td><%= link_to "Edit", edit_poll_path(poll) %></td>
+      <td><%= link_to "Destroy", poll, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Poll", new_poll_path %></p>

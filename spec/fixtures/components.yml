@@ -1,0 +1,11 @@
+one:
+  title: MyString
+  content: MyText
+  cmspage_id: 1
+  position: 1
+
+two:
+  title: MyString
+  content: MyText
+  cmspage_id: 1
+  position: 1

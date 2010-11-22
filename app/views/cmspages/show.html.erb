@@ -1,0 +1,14 @@
+  <div id="page">
+    <div id="header">
+      <h2>
+        <%= @cmspage.title %>
+      </h2>
+    </div> 
+    <div id="components">
+      <% @components.each do |component| %>
+        <div id = "<%= component.id %>" class ="component" style="top:<%= component.top %>px;left:<%= component.left %>px;width:<%= component.width %>px;height:<%= component.height %>px; position: relative;">
+           <%= render component %>
+        </div>
+      <% end %>
+    </div>
+  </div>

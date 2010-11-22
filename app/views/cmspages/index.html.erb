@@ -1,0 +1,17 @@
+<% title "Cmspages" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+  </tr>
+  <% for cmspage in @cmspages %>
+    <tr>
+      <td><%= cmspage.title %></td>
+      <td><%= link_to "Show", cmspage %></td>
+      <td><%= link_to "Edit", edit_cmspage_path(cmspage) %></td>
+      <td><%= link_to "Destroy", cmspage, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Cmspage", new_cmspage_path %></p>
