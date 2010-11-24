@@ -1,3 +1,2 @@
-$('#<%= @component.id %>').append('<div class="item"><%= escape_javascript(render @component) %></div>');
 $('#dialog').dialog('close');
-$('#dialog .editform').remove()
+$('#<%= @component.id%> .item').replaceWith('<div class="item"><%= escape_javascript(render @component) %></div>');
