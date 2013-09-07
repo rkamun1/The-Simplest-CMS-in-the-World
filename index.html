@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>The-simplest-cms-in-the-world by sirBertly</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/sirBertly/The-Simplest-CMS-in-the-World">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>The-simplest-cms-in-the-world</h1>
+            <h2></h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/sirBertly/The-Simplest-CMS-in-the-World/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/sirBertly/The-Simplest-CMS-in-the-World/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <p>== Welcome to The Simplest CMS EVER!!
+There are three basic sections to this site
+1) root =&gt; /: This is the page the application defaults to. It shows a menu with created pages and the first page of the list(database). If no page has been created yet, the first user will be redirected to the admin side to create a page
+2) blog =&gt; /blog. This is the blog side of the site. Admin is allowed to created a blog and leave a comment
+3) admin =&gt; /admin: This is the admin section if the site. admin is allowed to create a page, add components to a page, edit components, delete components,or re-order the components on the page.</p>
+
+<p>Component: Using single table inheritance, I have implemented three basic types of components. 
+    i)The basic component, this is basically a title and content
+    ii)The poll. Accepts a title and a poll question. 
+    iii)The blog roll. this just accepts a title.
+The basic component can be moved around the page(drag and drop) or resized.
+Menu on the user side, grows dynamically as pages are added.
+A Blog is included.
+Components may be dragged across the page and resized.</p>
+
+<p>There is no save. Once you are finished editing your page, go back to the page list. everything shall be saved. Not very intuitive, I know.</p>
+
+<p>BUGS:</p>
+
+<ul>
+<li>A JQuery UI mis-function causes the component to fly to the bottom of the page when resized. But if you find it and pull it back it will work just fine.</li>
+<li>I was trying STI for the first time, and while it is an amazing implementation of inheritance. It calls the generic component template the first time a component is rendered rather than the specific poll or recent blog template.</li>
+<li>Code is not as DRY as I would like it to be.</li>
+</ul>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/sirBertly">sirBertly</a> can be found on <a href="https://github.com/sirBertly/The-Simplest-CMS-in-the-World">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
